@@ -1,0 +1,59 @@
+body{
+  padding:0;
+  margin:0;
+  background: #232323 url(/images/wood.png) top left;
+  font-family: 'Roboto Slab', serif;
+  color: #fff
+}
+.container{
+  width: 1920px;
+  height: 1080px;
+}
+
+.widget{
+  width: calc(1820px / 4);
+  height: calc(1000px / 3);
+  margin:20px 0 0 20px;
+  float:left;
+  box-shadow: 0px 3px 8px #333;
+
+  h1{
+    text-align: center;
+    font-size: 160px;
+    line-height: 200px;
+    margin:0;
+    padding: 0;
+    font-weight: 400;
+    float:left;
+    width: 100%;
+    &.reduced { font-size: 116px; }
+  }
+  h2{
+    text-align: center;
+    font-size: 28px;
+    margin:0;
+    padding: 0.75em;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.75)
+  }
+
+  &.blank {
+    box-shadow: none;
+  }
+
+  &.dark-blue{
+    background-color: #0d202a;
+    h2 {background-color: #071116;}
+    h1 { text-shadow: 0px 6px 6px #071116; }
+  }
+  &.med-blue{
+    background-color: #072d3f;
+    h2 { background-color: #051d28;}
+    h1 { text-shadow: 0px 6px 6px #051d28; }
+  }
+  &.deep-red{
+    background-color: #661111;
+    h2 { background-color: #500d0d; }
+    h1 { text-shadow: 0px 6px 6px #500d0d; }
+  }
+}
