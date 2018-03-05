@@ -60,8 +60,10 @@ defmodule Humid.Dashboard do
   end
 
   defp days_until_next_meetup do
+    meetup_api_key = Application.get_env(:humid, :meetup_api_key)
+
     url =
-      "https://api.meetup.com/Denver-Erlang-Elixir/events?&sign=true&key=6879b3e142ea2c177b6c49465b185&photo-host=public&page=1"
+      "https://api.meetup.com/Denver-Erlang-Elixir/events?&sign=true&key=#{meetup_api_key}&photo-host=public&page=1"
 
     response = HTTPotion.get(url)
 
