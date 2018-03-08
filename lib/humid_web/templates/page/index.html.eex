@@ -28,7 +28,10 @@
   <h2>Days Until Next Meetup</h2>
   <h1 id="days_until_next_meetup"><%= @days_until_next_meetup %></h1>
 </div>
-<div class="widget blank"></div>
+<div class="widget med-purple">
+  <h2>Days Until Next Birthday</h2>
+  <h1 id="days_until_next_birthday"><%= @days_until_next_birthday %></h1>
+</div>
 <div class="widget blank"></div>
 <div class="widget med-blue weather">
   <h2>Current Temperature</h2>

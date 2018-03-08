@@ -61,6 +61,7 @@ let hexRankingContainer = document.querySelector("#hex_ranking")
 let hexCommitsContainer = document.querySelector("#hex_commits")
 let daysUntilNextMeetupContainer = document.querySelector("#days_until_next_meetup")
 let currentWeatherContainer = document.querySelector("#current_weather")
+let daysUntilNextBirthdayContainer = document.querySelector("#days_until_next_birthday")
 
 channel.on("new_data", payload => {
   oosCommitsContainer.innerText = payload.online_order_commits
@@ -69,6 +70,7 @@ channel.on("new_data", payload => {
   hexCommitsContainer.innerText = payload.hex_commits
   daysUntilNextMeetupContainer.innerText = payload.days_until_next_meetup
   currentWeatherContainer.innerText = payload.current_weather
+  daysUntilNextBirthdayContainer.innerText = payload.days_until_next_birthday
 })
 
 channel.join()

@@ -5,7 +5,8 @@ defmodule Humid.Dashboard do
     :online_order_commits,
     :open_prs,
     :days_until_next_meetup,
-    :current_weather
+    :current_weather,
+    :days_until_next_birthday
   ]
 
   def fetch do
@@ -20,7 +21,8 @@ defmodule Humid.Dashboard do
       online_order_commits: online_order_commits(client),
       open_prs: open_prs(client),
       days_until_next_meetup: days_until_next_meetup(),
-      current_weather: temperature
+      current_weather: temperature,
+      days_until_next_birthday: days_until_next_birthday()
     }
   end
 
@@ -73,6 +75,31 @@ defmodule Humid.Dashboard do
       |> List.first()
 
     days_between(first_result["time"])
+  end
+
+  def days_until_next_birthday do
+    birthdays = [%{month: 01, day: 15}, %{month: 05, day: 04}, %{month: 09, day: 24}]
+    today = Date.utc_today()
+    this_year = today.year
+    next_year = this_year + 1
+
+    this_years_bdays =
+      Enum.map(birthdays, fn dt ->
+        {:ok, date} = Date.new(this_year, dt.month, dt.day)
+        date
+      end)
+
+    next_years_bdays =
+      Enum.map(birthdays, fn dt ->
+        {:ok, date} = Date.new(next_year, dt.month, dt.day)
+        date
+      end)
+
+    Enum.reduce(this_years_bdays ++ next_years_bdays, 366, fn dt, min ->
+      if Date.diff(dt, today) < min && Date.diff(dt, today) > 0,
+        do: Date.diff(dt, today),
+        else: min
+    end)
   end
 
   defp days_between(event_time) do
