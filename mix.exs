@@ -5,7 +5,7 @@ defmodule Humid.Mixfile do
     [
       app: :humid,
       version: "0.0.1",
-      elixir: "~> 1.4",
+      elixir: "~> 1.8",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -33,17 +33,18 @@ defmodule Humid.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:cowboy, "~> 1.0"},
+      {:darkskyx, "~> 0.1.3"},
+      {:exvcr, "~> 0.9.1", only: :test},
+      {:gettext, "~> 0.11"},
+      {:httpotion, "~> 3.1.0"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"},
-      {:tentacat, "~> 0.8.0"},
-      {:darkskyx, "~> 0.1.3"},
-      {:httpotion, "~> 3.1.0"}
+      {:postgrex, ">= 0.0.0"},
+      {:tentacat, "~> 0.8.0"}
     ]
   end
 

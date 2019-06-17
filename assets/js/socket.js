@@ -55,20 +55,12 @@ socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
 let channel = socket.channel("dashboard:data", {})
-let oosCommitsContainer = document.querySelector("#oos_commits")
-let openPrsContainer = document.querySelector("#open_prs")
-let hexRankingContainer = document.querySelector("#hex_ranking")
 let hexCommitsContainer = document.querySelector("#hex_commits")
-let daysUntilNextMeetupContainer = document.querySelector("#days_until_next_meetup")
 let currentWeatherContainer = document.querySelector("#current_weather")
 let daysUntilNextBirthdayContainer = document.querySelector("#days_until_next_birthday")
 
 channel.on("new_data", payload => {
-  oosCommitsContainer.innerText = payload.online_order_commits
-  openPrsContainer.innerText = payload.open_prs
-  hexRankingContainer.innerText = payload.hex_ranking
   hexCommitsContainer.innerText = payload.hex_commits
-  daysUntilNextMeetupContainer.innerText = payload.days_until_next_meetup
   currentWeatherContainer.innerText = payload.current_weather
   daysUntilNextBirthdayContainer.innerText = payload.days_until_next_birthday
 })

@@ -8,12 +8,8 @@ defmodule Humid.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
-      # Start the Ecto repository
       supervisor(Humid.Repo, []),
-      # Start the endpoint when the application starts
       supervisor(HumidWeb.Endpoint, []),
-      # Start your own worker by calling: Humid.Worker.start_link(arg1, arg2, arg3)
-      # worker(Humid.Worker, [arg1, arg2, arg3]),
       worker(Humid.Recur, [])
     ]
 

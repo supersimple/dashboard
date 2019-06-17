@@ -8,8 +8,7 @@ use Mix.Config
 # General application configuration
 config :humid,
   ecto_repos: [Humid.Repo],
-  github_personal_api_key: System.get_env("GITHUB_PERSONAL_API_KEY"),
-  meetup_api_key: System.get_env("MEETUP_API_KEY")
+  github_personal_api_key: System.get_env("GITHUB_PERSONAL_API_KEY")
 
 config :darkskyx,
   api_key: System.get_env("DARKSKY_API_KEY"),

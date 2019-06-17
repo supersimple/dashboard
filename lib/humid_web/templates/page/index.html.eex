@@ -1,41 +1,25 @@
-<div class="widget dark-blue">
-  <h2>OOS Commits</h2>
-  <h1 id="oos_commits"><%= @online_order_commits %></h1>
-</div>
-<div class="widget dark-blue">
-  <h2>Open PRs</h2>
-  <h1 id="open_prs"><%= @open_prs %></h1>
-</div>
-<div class="widget blank"></div>
-<div class="widget med-blue time">
-  <h2>Current Time</h2>
-  <h1 id="time"></h1>
-</div>
-<div class="widget dark-blue">
-  <h2>Hex Ranking</h2>
-  <h1 id="hex_ranking"><%= @hex_ranking %></h1>
-</div>
-<div class="widget dark-blue">
-  <h2>Hex Commits</h2>
-  <h1 id="hex_commits"><%= @hex_commits %></h1>
-</div>
-<div class="widget blank"></div>
 <div class="widget med-blue date">
   <h2>Current Date</h2>
   <h1 class="reduced" id="date"></h1>
 </div>
-<div class="widget deep-red">
-  <h2>Days Until Next Meetup</h2>
-  <h1 id="days_until_next_meetup"><%= @days_until_next_meetup %></h1>
+<div class="widget med-blue time">
+  <h2>Current Time</h2>
+  <h1 id="time"></h1>
 </div>
+<div class="widget blank"></div>
+<div class="widget deep-red">
+  <h2>Hex Commits</h2>
+  <h1 id="hex_commits"><%= @hex_commits %></h1>
+</div>
+<div class="widget light-blue weather">
+  <h2>Current Temperature</h2>
+  <h1 id="current_weather"><%= @current_weather %></h1>
+</div>
+<div class="widget blank"></div>
+<div class="widget blank"></div>
 <div class="widget med-purple">
   <h2>Days Until Next Birthday</h2>
   <h1 id="days_until_next_birthday"><%= @days_until_next_birthday %></h1>
-</div>
-<div class="widget blank"></div>
-<div class="widget med-blue weather">
-  <h2>Current Temperature</h2>
-  <h1 id="current_weather"><%= @current_weather %></h1>
 </div>
 <script>
   (function () {
